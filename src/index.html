@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <link href="/images/logo-alpha.png" rel="icon" type="image/png"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Kudos</title>
+    <script>
+        // Initialize theme on page load
+        const theme = localStorage.getItem('theme') || 'system';
+
+        if (theme === 'dark') {
+            document.documentElement.classList.add('dark');
+        } else if (theme === 'light') {
+            document.documentElement.classList.add('light');
+        } else {
+            // System preference
+            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.add('light');
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900">
+<div id="root"></div>
+<script src="/src/main.tsx" type="module"></script>
+</body>
+</html>

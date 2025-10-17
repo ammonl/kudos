@@ -1,0 +1,6 @@
+[functions]
+[functions.process-notifications]
+verify_jwt = false
+
+[functions.schedule-reminders]
+verify_jwt = false
